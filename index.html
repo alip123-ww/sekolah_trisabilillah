@@ -1,303 +1,248 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekolah TriSabilillah - Ceria, Berprestasi, Berkarakter!</title>
+    <meta name="description" content="Website portofolio resmi Sekolah TriSabilillah. Menampilkan prestasi, program unggulan, fasilitas modern, dan galeri kegiatan siswa untuk calon peserta didik baru.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (untuk ikon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Link ke file CSS Anda -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-/* Variabel Warna Baru: Tema "Hijau, Kuning, Cyan" */
-:root {
-    --primary-color: #00796B;   /* Teal Green - Profesional, menenangkan */
-    --secondary-color: #0097A7; /* Cyan - Inovasi, cerah */
-    --accent-color: #FFC107;    /* Amber Yellow - Energi, hangat */
-    --highlight-color: #FFD54F; /* Lighter Yellow - Sorotan */
-    --dark-color: #212121;      /* Hampir hitam untuk kontras teks terbaik */
-    --light-color: #FFFFFF;
-    --bg-light: #F5F5F5;        /* Abu-abu sangat terang untuk sedikit kedalaman */
-    --box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
-    --gradient-primary: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    --gradient-accent: linear-gradient(45deg, var(--accent-color), #FFA000);
-}
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
 
-/* Reset dan Pengaturan Dasar */
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    <!-- Header & Navigasi -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <!-- GANTI DENGAN LOGO SEKOLAH ANDA -->
+                <img src="https://placehold.co/150x50/00796B/ffffff?text=Logo+Sekolah" alt="Logo Sekolah TriSabilillah">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#fasilitas">Fasilitas</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <a href="#kontak" class="cta-button">Info PPDB</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark-color);
-    line-height: 1.7;
-    background-color: var(--bg-light);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+    <main>
+        <!-- Bagian Hero (Tampilan Utama) -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Selamat Datang di Sekolah TriSabilillah</h1>
+                <p class="hero-tagline">Mencetak Generasi <span class="typing-effect"></span></p>
+                <a href="#unggulan" class="hero-button">Lihat Keunggulan Kami <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="wave-divider"></div>
+        </section>
 
-.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        <!-- Bagian Statistik -->
+        <section id="stats" class="container section">
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Siswa Aktif</p>
+                </div>
+                <div class="stat-item animate-on-scroll" data-delay="100">
+                    <i class="fas fa-trophy"></i>
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Penghargaan</p>
+                </div>
+                <div class="stat-item animate-on-scroll" data-delay="200">
+                    <i class="fas fa-futbol"></i>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Ekstrakurikuler</p>
+                </div>
+                <div class="stat-item animate-on-scroll" data-delay="300">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3 class="counter" data-target="45">0</h3>
+                    <p>Guru Profesional</p>
+                </div>
+            </div>
+        </section>
 
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: var(--primary-color);
-    display: grid;
-    place-items: center;
-    z-index: 2000;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-.preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-.spinner {
-    width: 60px; height: 60px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top-color: var(--accent-color);
-    border-radius: 50%;
-    animation: spin 1s ease-in-out infinite;
-}
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
+        <!-- Bagian Kenapa Memilih Kami -->
+        <section id="unggulan" class="container section">
+            <h2 class="section-title animate-on-scroll">Kenapa Memilih TriSabilillah?</h2>
+            <div class="card-grid">
+                <div class="card feature-card animate-on-scroll">
+                    <div class="card-icon-wrapper"><i class="fas fa-school-flag card-icon feature-icon"></i></div>
+                    <h3>Kurikulum Terpadu</h3>
+                    <p>Menggabungkan kurikulum nasional dengan nilai-nilai Islami untuk membentuk karakter yang kuat.</p>
+                </div>
+                <div class="card feature-card animate-on-scroll" data-delay="200">
+                    <div class="card-icon-wrapper"><i class="fas fa-user-tie card-icon feature-icon"></i></div>
+                    <h3>Guru Profesional</h3>
+                    <p>Tenaga pendidik yang berpengalaman, bersertifikasi, dan berdedikasi tinggi dalam mengajar.</p>
+                </div>
+                <div class="card feature-card animate-on-scroll" data-delay="400">
+                    <div class="card-icon-wrapper"><i class="fas fa-lightbulb card-icon feature-icon"></i></div>
+                    <h3>Lingkungan Belajar Positif</h3>
+                    <p>Menciptakan suasana belajar yang aman, nyaman, dan mendukung potensi setiap siswa.</p>
+                </div>
+            </div>
+        </section>
 
-/* Header & Navigasi */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    position: sticky; top: 0; width: 100%; z-index: 1000;
-}
-nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-.logo img { height: 50px; width: auto; transition: transform 0.3s ease; }
-.logo img:hover { transform: scale(1.05); }
-.nav-links { list-style: none; display: flex; gap: 40px; }
-.nav-links a {
-    text-decoration: none; color: var(--dark-color); font-weight: 700;
-    position: relative; padding-bottom: 5px; transition: color 0.3s ease;
-}
-.nav-links a::after {
-    content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 50%;
-    transform: translateX(-50%); background-color: var(--accent-color);
-    transition: width 0.3s ease; border-radius: 2px;
-}
-.nav-links a:hover { color: var(--primary-color); }
-.nav-links a:hover::after { width: 100%; }
-.cta-button {
-    background: var(--gradient-accent); color: var(--dark-color); padding: 12px 30px;
-    border-radius: 50px; text-decoration: none; font-weight: 700;
-    transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
-}
-.cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5); }
-.menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
+        <!-- Bagian Prestasi -->
+        <section id="prestasi" class="container section">
+            <h2 class="section-title animate-on-scroll">Prestasi Terbaru Kami</h2>
+            <div class="card-grid">
+                <div class="card animate-on-scroll">
+                    <div class="card-icon-wrapper gold"><i class="fas fa-trophy card-icon"></i></div>
+                    <h3>Juara 1 Olimpiade Sains</h3>
+                    <p>Meraih medali emas dalam Olimpiade Sains Nasional (OSN) 2024, membuktikan keunggulan akademik kami.</p>
+                </div>
+                <div class="card animate-on-scroll" data-delay="200">
+                    <div class="card-icon-wrapper gold"><i class="fas fa-award card-icon"></i></div>
+                    <h3>Akreditasi A "Unggul"</h3>
+                    <p>Diakui oleh BAN-S/M dengan predikat tertinggi untuk kualitas pendidikan dan manajemen sekolah.</p>
+                </div>
+                <div class="card animate-on-scroll" data-delay="400">
+                    <div class="card-icon-wrapper gold"><i class="fas fa-users card-icon"></i></div>
+                    <h3>Juara Umum Lomba Pramuka</h3>
+                    <p>Menjadi juara umum dalam Lomba Tingkat IV Pramuka tingkat provinsi, menunjukkan karakter dan kepemimpinan siswa.</p>
+                </div>
+            </div>
+        </section>
 
-/* Bagian Hero */
-#hero {
-    background: var(--gradient-primary);
-    height: 95vh; display: flex; justify-content: center; align-items: center; text-align: center;
-    color: var(--light-color); padding: 0 20px; position: relative; overflow: hidden;
-}
-.hero-content { max-width: 800px; z-index: 2; }
-.hero-content h1 {
-    font-size: clamp(3rem, 5.5vw, 4.5rem);
-    margin-bottom: 1rem;
-    font-weight: 800;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-.hero-tagline { font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 2.5rem; height: 50px; }
-.typing-effect { color: var(--highlight-color); border-right: 3px solid var(--highlight-color); animation: blink-caret .75s step-end infinite; }
-.hero-button {
-    background: var(--accent-color); color: var(--dark-color); padding: 16px 45px;
-    border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 700;
-    transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
-}
-.hero-button:hover { background: var(--light-color); color: var(--primary-color); transform: translateY(-3px) scale(1.05); }
-.hero-button i { margin-left: 10px; transition: transform 0.3s ease; }
-.hero-button:hover i { transform: translateX(5px); }
-.wave-divider {
-    position: absolute; bottom: -1px; left: 0; width: 100%;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23F5F5F5' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,186.7C960,213,1056,235,1152,218.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
+        <!-- Bagian Program Unggulan -->
+        <section id="program" class="container section">
+            <h2 class="section-title animate-on-scroll">Program Unggulan</h2>
+            <div class="card-grid">
+                <div class="card animate-on-scroll">
+                    <div class="card-icon-wrapper blue"><i class="fas fa-book-quran card-icon"></i></div>
+                    <h3>Tahfidz Al-Qur'an</h3>
+                    <p>Program menghafal Al-Qur'an secara intensif dengan metode modern dan guru bersertifikasi.</p>
+                </div>
+                <div class="card animate-on-scroll" data-delay="200">
+                    <div class="card-icon-wrapper blue"><i class="fas fa-robot card-icon"></i></div>
+                    <h3>Kelas Robotik & Coding</h3>
+                    <p>Mempersiapkan siswa menghadapi era digital dengan keterampilan teknologi dan problem-solving.</p>
+                </div>
+                <div class="card animate-on-scroll" data-delay="400">
+                    <div class="card-icon-wrapper blue"><i class="fas fa-language card-icon"></i></div>
+                    <h3>Kelas Bilingual</h3>
+                    <p>Pembelajaran dua bahasa (Indonesia & Inggris) aktif untuk meningkatkan daya saing global siswa.</p>
+                </div>
+            </div>
+        </section>
 
-/* Pengaturan Section Umum */
-.section { padding: 120px 0; }
-#stats, #prestasi, #fasilitas, #testimoni { background-color: var(--bg-light); }
-.section-title {
-    text-align: center; font-size: 2.8rem; margin-bottom: 60px; color: var(--primary-color);
-    font-weight: 800; position: relative;
-}
-.section-title::after {
-    content: ''; display: block; width: 120px; height: 5px;
-    background: var(--gradient-accent); margin: 10px auto 0; border-radius: 5px;
-}
+        <!-- Bagian Fasilitas -->
+        <section id="fasilitas" class="container section">
+            <h2 class="section-title animate-on-scroll">Fasilitas Modern & Lengkap</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=Gedung+Sekolah" alt="Gedung Sekolah" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-school"></i> Gedung Sekolah</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-delay="150">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=Perpustakaan" alt="Perpustakaan" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-book-open"></i> Perpustakaan</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-delay="300">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=Lab+Komputer" alt="Laboratorium Komputer" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-laptop-code"></i> Lab Komputer</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-delay="450">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=GOR" alt="Gedung Olah Raga (GOR)" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-building"></i> Gedung Olah Raga</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-delay="600">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=Lapangan+Olahraga" alt="Lapangan Olahraga" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-futbol"></i> Lapangan Olahraga</span></div>
+                </div>
+                <div class="gallery-item animate-on-scroll" data-delay="750">
+                    <img src="https://placehold.co/400x300/e8e8e8/666?text=Ruang+Gym" alt="Ruang Gym" onerror="this.src='https://placehold.co/400x300?text=Gambar+Error'">
+                    <div class="overlay"><span><i class="fas fa-dumbbell"></i> Ruang Gym</span></div>
+                </div>
+            </div>
+        </section>
 
-/* Bagian Statistik */
-#stats { padding: 80px 0; }
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-.stat-item i { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
-.stat-item h3 { font-size: 3.5rem; color: var(--primary-color); font-weight: 800; }
-.stat-item p { font-size: 1.1rem; color: var(--dark-color); font-weight: 600; }
+        <!-- Bagian Testimoni -->
+        <section id="testimoni" class="container section">
+            <h2 class="section-title animate-on-scroll">Kata Mereka Tentang Kami</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate-on-scroll" data-delay="100">
+                    <img src="https://placehold.co/80x80/FFC107/ffffff?text=A" alt="Foto Wali Murid">
+                    <p>"Anak saya menjadi lebih percaya diri dan berprestasi sejak bersekolah di sini. Lingkungannya sangat mendukung."</p>
+                    <h4>- Ahmad Subarjo -</h4>
+                    <span>Wali Murid Kelas 8</span>
+                </div>
+                <div class="testimonial-card animate-on-scroll" data-delay="300">
+                    <img src="https://placehold.co/80x80/0097A7/ffffff?text=S" alt="Foto Alumni">
+                    <p>"Ilmu dan karakter yang saya dapatkan di TriSabilillah menjadi bekal berharga untuk melanjutkan ke perguruan tinggi favorit."</p>
+                    <h4>- Siti Nurhaliza -</h4>
+                    <span>Alumni Angkatan 2022</span>
+                </div>
+            </div>
+        </section>
 
-/* Desain Card */
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
-.card {
-    background: var(--light-color); padding: 40px; border-radius: 20px;
-    box-shadow: var(--box-shadow); text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative; overflow: hidden; border: 1px solid #eee;
-}
-.card:hover { transform: translateY(-12px); box-shadow: 0 18px 40px rgba(0, 121, 107, 0.15); }
-.card-icon-wrapper {
-    width: 80px; height: 80px; border-radius: 25px;
-    display: grid; place-items: center; margin: 0 auto 25px;
-    background: var(--gradient-accent);
-    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
-    transition: transform 0.3s ease, border-radius 0.3s ease;
-}
-.card:hover .card-icon-wrapper { transform: scale(1.1) rotate(10deg); border-radius: 50%; }
-.card-icon-wrapper.gold { background: linear-gradient(45deg, var(--highlight-color), #FFB300); box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4); }
-.card-icon-wrapper.blue { background: var(--gradient-primary); box-shadow: 0 5px 15px rgba(0, 151, 167, 0.3); }
-.card-icon { font-size: 2.5rem; color: var(--light-color); }
-.card h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--primary-color); font-weight: 700; }
+        <!-- Bagian Ajakan Bertindak (CTA) -->
+        <section id="cta" class="section">
+            <div class="container cta-content">
+                <h2 class="animate-on-scroll">Siap Bergabung dengan Keluarga Besar TriSabilillah?</h2>
+                <p class="animate-on-scroll" data-delay="100">Jadilah bagian dari generasi penerus yang cerdas, kreatif, dan berakhlak mulia. Daftar sekarang!</p>
+                <a href="#kontak" class="cta-main-button animate-on-scroll" data-delay="200">Hubungi Kami Sekarang</a>
+            </div>
+        </section>
+        
+        <!-- Bagian Kontak -->
+        <section id="kontak" class="container section">
+            <h2 class="section-title animate-on-scroll">Hubungi Kami</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info animate-on-scroll">
+                    <h3>Informasi Pendaftaran & Kontak</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Pendidikan No. 123, Malang, Jawa Timur</p>
+                    <p><i class="fas fa-phone"></i> (0341) 123-4567</p>
+                    <p><i class="fab fa-whatsapp"></i> 0812-3456-7890 (Admin)</p>
+                    <p><i class="fas fa-envelope"></i> info@trisabilillah.sch.id</p>
+                    <div class="social-media">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-map animate-on-scroll" data-delay="200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.36219895025!2d112.61213341535609!3d-7.961066794263695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e788281bddb3687%3A0x442432d1d3f5a0de!2sUniversitas%20Brawijaya!5e0!3m2!1sid!2sid!4v1662888145625!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
 
-/* Desain Galeri */
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.gallery-item {
-    position: relative; overflow: hidden; border-radius: 20px;
-    box-shadow: var(--box-shadow); cursor: pointer; aspect-ratio: 4 / 3;
-}
-.gallery-item img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-.gallery-item:hover img { transform: scale(1.1); filter: brightness(1.05); }
-.gallery-item .overlay {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(0, 121, 107, 0.95), transparent);
-    color: var(--light-color); padding: 40px 20px 20px;
-    opacity: 0; transform: translateY(20px); transition: all 0.4s ease-in-out;
-    font-weight: 700; font-size: 1.2rem;
-}
-.gallery-item .overlay i { margin-right: 10px; }
-.gallery-item:hover .overlay { opacity: 1; transform: translateY(0); }
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sekolah TriSabilillah. Didesain dengan <i class="fas fa-heart"></i> untuk Pendidikan Indonesia.</p>
+        </div>
+    </footer>
 
-/* Bagian Testimoni */
-.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
-.testimonial-card {
-    background: var(--light-color); padding: 30px; border-radius: 20px;
-    box-shadow: var(--box-shadow); text-align: center;
-    border-left: 6px solid var(--accent-color);
-}
-.testimonial-card img {
-    width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
-    margin-bottom: 20px; border: 4px solid var(--bg-light);
-}
-.testimonial-card p { font-style: italic; margin-bottom: 20px; font-size: 1.1rem; }
-.testimonial-card h4 { font-weight: 700; color: var(--primary-color); }
-.testimonial-card span { font-size: 0.9rem; color: #6c757d; }
+    <!-- Tombol Kembali ke Atas -->
+    <a href="#" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-/* Bagian Ajakan Bertindak (CTA) */
-#cta {
-    background: var(--gradient-primary) center center/cover;
-    color: var(--light-color);
-    text-align: center;
-    padding: 100px 20px;
-}
-.cta-content h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.cta-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-.cta-main-button {
-    background: var(--accent-color);
-    color: var(--dark-color);
-    padding: 16px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
-}
-.cta-main-button:hover {
-    background: var(--highlight-color);
-    color: var(--dark-color);
-    transform: translateY(-3px) scale(1.05);
-}
-
-/* Bagian Kontak */
-.contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: flex-start; }
-.contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-color); }
-.contact-info p { margin-bottom: 20px; font-size: 1.1rem; display: flex; align-items: center; }
-.contact-info i { color: var(--secondary-color); margin-right: 15px; width: 25px; font-size: 1.4rem; text-align: center; }
-.social-media { margin-top: 30px; }
-.social-media a {
-    color: var(--primary-color); font-size: 1.8rem; margin-right: 25px;
-    text-decoration: none; transition: all 0.3s ease; display: inline-block;
-}
-.social-media a:hover { color: var(--accent-color); transform: translateY(-3px); }
-.contact-map iframe { border-radius: 20px; box-shadow: var(--box-shadow); width: 100%; }
-
-/* Footer */
-footer { background: var(--dark-color); color: var(--light-color); text-align: center; padding: 25px 0; }
-footer .fa-heart { color: var(--secondary-color); }
-
-/* Tombol Kembali ke Atas */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--gradient-accent);
-    color: var(--dark-color);
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-}
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Animasi */
-@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--highlight-color); } }
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Desain Responsif */
-@media (max-width: 992px) { .contact-wrapper, .testimonial-grid { grid-template-columns: 1fr; } }
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed; top: 80px; right: 0; width: 100%; height: calc(100vh - 80px);
-        background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(5px);
-        flex-direction: column; align-items: center; justify-content: center; gap: 40px;
-        transform: translateX(100%); transition: transform 0.4s ease-in-out;
-    }
-    .nav-links.nav-active { transform: translateX(0); }
-    .nav-links a { font-size: 1.2rem; }
-    .menu-toggle { display: block; }
-    .cta-button { display: none; }
-    .section { padding: 80px 0; }
-    .section-title { font-size: 2.2rem; }
-}
+    <!-- Link ke file JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
