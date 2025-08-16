@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.querySelector('.preloader');
     window.addEventListener('load', () => {
         preloader.classList.add('hidden');
+        // Memicu animasi setelah preloader hilang
+        const elementsOnLoad = document.querySelectorAll('.animate-on-load');
+        elementsOnLoad.forEach((el, index) => {
+            const delay = el.dataset.delay || (index * 200);
+            el.style.animationDelay = `${delay}ms`;
+            el.classList.add('animated');
+        });
     });
 
     // Fungsionalitas Menu Mobile (Hamburger)
@@ -46,46 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
     animatedElements.forEach(el => observer.observe(el));
-
-    // Animasi Penghitung Angka (Counter)
-    const runCounter = (counter) => {
-        counter.innerText = '0';
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const increment = target / (duration / 16);
-
-        let current = 0;
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.innerText = Math.ceil(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        requestAnimationFrame(updateCounter);
-    };
-    
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counters = entry.target.querySelectorAll('.counter');
-                counters.forEach(runCounter);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    const statsSection = document.getElementById('stats');
-    if (statsSection) {
-        counterObserver.observe(statsSection);
-    }
     
     // Efek Ketikan (Typing Effect)
     const typingElement = document.querySelector('.typing-effect');
     if (typingElement) {
-        const words = ["Unggul", "Cerdas", "Kreatif", "Berakhlak Mulia"];
+        const words = ["Unggul", "Cerdas", "Kreatif", "Berkarakter"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -131,6 +103,90 @@ document.addEventListener('DOMContentLoaded', function() {
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    }
+
+    // Inisialisasi Particles.js
+    if (document.getElementById('particles-js')) {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
         });
     }
 });
